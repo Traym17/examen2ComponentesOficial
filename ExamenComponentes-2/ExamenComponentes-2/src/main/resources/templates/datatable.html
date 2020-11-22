@@ -1,0 +1,58 @@
+<!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml"
+                      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+</head>
+<body>
+
+<table id="example" class="table display dt-responsive nowrap table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Autor</th>
+        <th>Objetivo</th>
+        <th>Categoria</th>
+
+
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <th>Nombre</th>
+        <th>Autor</th>
+        <th>Objetivo</th>
+        <th>Categoria</th>
+
+
+    </tr>
+    </tfoot>
+
+</table>
+<script>
+    /*$(document).ready(function() {
+        $('#example').DataTable();
+    } );*/
+
+    $(document).ready( function () {
+        var table = $('#example').DataTable({
+            "sAjaxSource": "http://localhost:8082/dataTable_Workshop",
+            "sAjaxDataProp": "",
+            "aoColumns": [
+                { "mData": "name"},
+                { "mData": "autor" },
+                { "mData": "objetivo" },
+                { "mData": "categoria" }
+
+            ]
+        })
+    });
+
+</script>
+</body>
+</html>
